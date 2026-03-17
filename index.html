@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiaan van den Berg | Financial Planner | Trident – Liberty</title>
+  <meta name="description" content="Tiaan van den Berg is a professional Financial Planner at Trident, an affiliate of Liberty. Specialising in holistic financial planning, investments, retirement, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="Portrait.jpeg" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a1f44;
+      --navy-dark: #050e22;
+      --navy-mid: #1a3a6e;
+      --gold: #c9a84c;
+      --gold-light: #e8c96e;
+      --white: #ffffff;
+      --off-white: #f5f7fa;
+      --text: #1a1a2e;
+      --text-muted: #5a6a8a;
+      --border: #dde3ef;
+      --success: #4caf7d;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10, 31, 68, 0.97);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 64px;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-logo-sub {
+      font-size: 0.65rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      line-height: 1;
+    }
+
+    .nav-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.2);
+    }
+
+    .nav-liberty {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.06em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-links a.nav-cta {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.5rem 1.2rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .nav-links a.nav-cta:hover { background: var(--gold-light); color: var(--navy); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1e4a8a 100%);
+      display: flex;
+      align-items: center;
+      padding: 100px 2rem 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -100px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold);
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title-role {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 500px;
+      margin-bottom: 2.5rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .btn-outline {
+      border: 1.5px solid rgba(255,255,255,0.4);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+
+    .hero-photo-wrap {
+      position: relative;
+    }
+
+    .hero-photo-frame {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    }
+
+    .hero-photo-frame img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      object-fit: cover;
+      object-position: top;
+      aspect-ratio: 3 / 4;
+    }
+
+    .hero-photo-badge {
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--white);
+      border-radius: 10px;
+      padding: 0.75rem 1.5rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      white-space: nowrap;
+    }
+
+    .liberty-dot {
+      width: 32px;
+      height: 32px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-photo-badge-text {
+      font-size: 0.78rem;
+      color: var(--text);
+    }
+
+    .hero-photo-badge-text strong {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--navy);
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--off-white);
+      border-top: 3px solid var(--gold);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem;
+    }
+
+    .trust-bar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .trust-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .trust-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .trust-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 2rem; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      line-height: 1.7;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-quote {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.65;
+      padding-left: 1.5rem;
+      border-left: 4px solid var(--gold);
+      margin: 2rem 0;
+    }
+
+    .about-body {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-credentials {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .credential-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .credential-item::before {
+      content: '✓';
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      font-size: 0.65rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-card {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 2.5rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: '"';
+      position: absolute;
+      top: -20px; right: 20px;
+      font-size: 12rem;
+      color: rgba(201,168,76,0.08);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .about-card-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .about-card-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .about-card-author {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .about-card-author strong {
+      display: block;
+      color: white;
+      font-size: 0.95rem;
+    }
+
+    .about-affiliation {
+      margin-top: 1.5rem;
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .affiliation-logo {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: white;
+      letter-spacing: 0.05em;
+    }
+
+    .affiliation-logo-sub {
+      font-size: 0.7rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+
+    .affiliation-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.15);
+      flex-shrink: 0;
+    }
+
+    .affiliation-info {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.9);
+      font-weight: 600;
+    }
+
+    .affiliation-info span {
+      display: block;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+    }
+
+    /* ── SERVICES ── */
+    .services { background: var(--off-white); }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .services-header .section-subtitle { margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+      position: relative;
+      overflow: hidden;
+      will-change: transform;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 12px 40px rgba(10,31,68,0.1);
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .service-card:hover::after { transform: scaleX(1); }
+
+    .service-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+
+    .service-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── WHY ── */
+    .why { background: var(--white); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .why-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      margin-top: 2rem;
+    }
+
+    .why-item {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .why-num {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--navy);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .why-content h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+
+    .why-content p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .why-testimonial {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 2.5rem;
+      color: white;
+    }
+
+    .why-testimonial + .why-testimonial { margin-top: 1.5rem; }
+
+    .stars {
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.1em;
+    }
+
+    .testimonial-text {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.9);
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonial-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--navy);
+      font-size: 0.9rem;
+    }
+
+    .testimonial-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .testimonial-sub {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── CONTACT ── */
+    .contact { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact .section-tag { color: var(--gold); }
+    .contact .section-title { color: var(--white); }
+    .contact .section-subtitle { color: rgba(255,255,255,0.65); }
+
+    .contact-details {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .contact-value {
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .contact-value:hover { color: var(--gold); }
+
+    .contact-form {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+
+    .form-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-subtitle {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1.75rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.04em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      color: white;
+      font-size: 0.9rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+
+    .form-group select option { background: var(--navy); }
+
+    .form-group textarea { resize: vertical; min-height: 90px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      padding: 0.9rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.2s, transform 0.15s;
+      font-family: inherit;
+    }
+
+    .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer strong { color: rgba(255,255,255,0.8); }
+    footer p + p { margin-top: 0.4rem; }
+    footer p:last-child { margin-top: 1rem; font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-photo-wrap { order: -1; max-width: 280px; margin: 0 auto; }
+      .about-grid, .why-grid, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .trust-bar-inner { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 560px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-brand">
+      <div>
+        <span class="nav-logo-text">TRIDENT</span>
+        <span class="nav-logo-sub">An affiliate of Liberty</span>
+      </div>
+      <div class="nav-divider"></div>
+      <span class="nav-liberty">Tiaan van den Berg</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Tiaan</a></li>
+      <li><a href="#contact" class="nav-cta">Book a Consultation</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">Trident &mdash; Affiliated with Liberty</div>
+        <h1>Tiaan van den Berg</h1>
+        <p class="hero-title-role">Financial Planner</p>
+        <p class="hero-desc">
+          Helping individuals and families achieve financial confidence through honest advice, holistic planning, and a genuine commitment to your long-term wellbeing.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Book a Free Consultation</a>
+          <a href="#services" class="btn-outline">View Services</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-frame">
+          <!-- Replace src with an actual photo of Tiaan if available -->
+          <img
+            src="Portrait.jpeg"
+            alt="Tiaan van den Berg – Financial Planner at Trident Liberty"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="hero-photo-badge">
+          <div class="liberty-dot">L</div>
+          <div class="hero-photo-badge-text">
+            <strong>Liberty Group</strong>
+            Authorised Financial Services Provider
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <div class="trust-icon">🏛️</div>
+        <div class="trust-value">Liberty</div>
+        <div class="trust-label">Trusted Brand Since 1957</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🔒</div>
+        <div class="trust-value">FSP Licensed</div>
+        <div class="trust-label">FSCA Regulated Advice</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🤝</div>
+        <div class="trust-value">Holistic</div>
+        <div class="trust-label">360° Financial Planning</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🎯</div>
+        <div class="trust-value">Client-First</div>
+        <div class="trust-label">Advice Tailored to You</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div>
+          <p class="section-tag">About Tiaan</p>
+          <h2 class="section-title">A Financial Planner Who Puts You First</h2>
+          <blockquote class="about-quote">
+            "To add value and change people's lives through professional advice and holistic financial planning."
+          </blockquote>
+          <p class="about-body">
+            Tiaan van den Berg is a dedicated Financial Planner operating under Trident, an affiliate of Liberty — one of South Africa's most established financial services groups. He believes that great financial planning goes beyond numbers: it's about understanding your life, your goals, and building a roadmap that gives you genuine peace of mind.
+          </p>
+          <p class="about-body">
+            Whether you're just starting your financial journey, preparing for retirement, or looking to protect what you've built, Tiaan brings clarity, integrity, and personalised guidance to every client relationship.
+          </p>
+          <div class="about-credentials">
+            <div class="credential-item">Operates under Liberty's Authorised FSP licence</div>
+            <div class="credential-item">Holistic financial planning approach</div>
+            <div class="credential-item">Regulated by the FSCA (Financial Sector Conduct Authority)</div>
+            <div class="credential-item">Backed by Trident &amp; the Liberty Group</div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-card">
+            <p class="about-card-title">Tiaan's Mission</p>
+            <p class="about-card-text">
+              "My goal has always been simple: add real value to people's lives. I do that by listening first, building a complete picture of where you are and where you want to go, and then crafting a plan that's genuinely yours."
+            </p>
+            <div class="about-card-author">
+              <strong>Tiaan van den Berg</strong>
+              Financial Planner, Trident – Liberty
+            </div>
+          </div>
+          <div class="about-affiliation">
+            <div>
+              <div class="affiliation-logo">TRIDENT</div>
+              <div class="affiliation-logo-sub">AN AFFILIATE OF LIBERTY</div>
+            </div>
+            <div class="affiliation-divider"></div>
+            <div class="affiliation-info">
+              Liberty Group Ltd
+              <span>Trusted since 1957 · JSE Listed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <div class="services-header">
+        <p class="section-tag">What I Do</p>
+        <h2 class="section-title">Comprehensive Financial Services</h2>
+        <p class="section-subtitle">Every aspect of your financial life, covered under one trusted relationship.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <div class="service-name">Risk Analysis</div>
+          <p class="service-desc">A thorough assessment of the financial risks that could disrupt your life — so you can face the unexpected with confidence.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <div class="service-name">Investments</div>
+          <p class="service-desc">Grow your wealth through carefully selected investment strategies aligned with your risk appetite and life goals.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏖️</div>
+          <div class="service-name">Retirement Planning</div>
+          <p class="service-desc">Build a retirement strategy that ensures your later years are comfortable, secure, and on your terms.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <div class="service-name">Short Term Insurance</div>
+          <p class="service-desc">Protect your assets — home, car, and valuables — with appropriate short-term cover tailored to your lifestyle.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💊</div>
+          <div class="service-name">Medical Aid</div>
+          <p class="service-desc">Navigate the medical aid landscape with expert guidance to find cover that balances your health needs and budget.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📜</div>
+          <div class="service-name">Testament &amp; Estate</div>
+          <p class="service-desc">Ensure your wishes are honoured and your loved ones are protected with a properly structured will and estate plan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY TIAAN -->
+  <section class="why" id="why">
+    <div class="section-inner">
+      <div class="why-grid">
+        <div>
+          <p class="section-tag">Why Work With Tiaan</p>
+          <h2 class="section-title">The Advice You Deserve, Delivered With Integrity</h2>
+          <div class="why-list">
+            <div class="why-item">
+              <div class="why-num">01</div>
+              <div class="why-content">
+                <h4>Honest, Transparent Advice</h4>
+                <p>No jargon, no hidden agendas. Tiaan explains your options clearly so you always understand what you're signing up for and why.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-num">02</div>
+              <div class="why-content">
+                <h4>Backed by Liberty's Strength</h4>
+                <p>As a Trident affiliate of Liberty, Tiaan operates within one of South Africa's most regulated and trusted financial services environments.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-num">03</div>
+              <div class="why-content">
+                <h4>A Long-Term Relationship</h4>
+                <p>Your financial needs change over time. Tiaan stays with you through every life stage — reviewing, adjusting, and evolving your plan.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-num">04</div>
+              <div class="why-content">
+                <h4>Holistic, Not Piecemeal</h4>
+                <p>Rather than solving one problem at a time, Tiaan looks at your complete financial picture and builds a cohesive strategy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="why-testimonial">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "Walking into my first meeting I honestly wasn't sure what to expect. Tiaan took the time to understand everything — not just my finances, but my life goals too. He gave me a plan that finally made sense and the confidence that I'm on the right track."
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">JP</div>
+              <div>
+                <div class="testimonial-name">Johan P.</div>
+                <div class="testimonial-sub">Liberty client</div>
+              </div>
+            </div>
+          </div>
+          <div class="why-testimonial">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "I came to Tiaan with no idea where to start with retirement planning. He was patient, thorough, and never made me feel like my questions were silly. I now have a solid plan and real peace of mind."
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">SM</div>
+              <div>
+                <div class="testimonial-name">Sarah M.</div>
+                <div class="testimonial-sub">Liberty client</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div>
+        <p class="section-tag">Get in Touch</p>
+        <h2 class="section-title">Ready to Start Your Financial Journey?</h2>
+        <p class="section-subtitle">
+          Book a free, no-obligation consultation. Tiaan will listen to your situation and show you exactly what's possible.
+        </p>
+        <div class="contact-details">
+          <div class="contact-row">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Phone</div>
+              <a href="tel:+27725642194" class="contact-value">+27 72 564 2194</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <a href="mailto:christiaan.vandenberg@liblink.co.za" class="contact-value">christiaan.vandenberg@liblink.co.za</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">🌐</div>
+            <div>
+              <div class="contact-label">Website</div>
+              <a href="https://www.liberty.co.za" target="_blank" rel="noopener" class="contact-value">www.liberty.co.za</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">🏢</div>
+            <div>
+              <div class="contact-label">Company</div>
+              <span class="contact-value">Trident – An Affiliate of Liberty</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-title">Book a Consultation</div>
+        <div class="form-subtitle">Free, confidential, and no obligation.</div>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+27 82 000 0000" />
+          </div>
+          <div class="form-group">
+            <label>I'm interested in</label>
+            <select>
+              <option value="">Select a service...</option>
+              <option>Holistic Financial Planning</option>
+              <option>Risk Analysis</option>
+              <option>Investments</option>
+              <option>Retirement Planning</option>
+              <option>Short Term Insurance</option>
+              <option>Medical Aid</option>
+              <option>Testament &amp; Estate Planning</option>
+              <option>General consultation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message (optional)</label>
+            <textarea placeholder="Tell Tiaan a bit about your situation or any specific questions..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Tiaan van den Berg</strong> &nbsp;|&nbsp; Financial Planner &nbsp;|&nbsp; Trident, an affiliate of Liberty</p>
+    <p>
+      <a href="tel:+27725642194">+27 72 564 2194</a>
+      &nbsp;&middot;&nbsp;
+      <a href="mailto:christiaan.vandenberg@liblink.co.za">christiaan.vandenberg@liblink.co.za</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://www.liberty.co.za" target="_blank" rel="noopener">liberty.co.za</a>
+    </p>
+    <p>
+      Liberty Group Ltd is a licensed Financial Services Provider (FSP 2409). Trident operates as an authorised affiliate.<br/>
+      This page is for informational purposes. Financial advice is provided in accordance with the FAIS Act.
+    </p>
+  </footer>
+
+  <style>
+    .form-submit.sent { background: var(--success); }
+  </style>
+  <script>
+    // Active nav highlighting — cached offsets, rAF-throttled, change-guarded
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    const navLinks = document.querySelectorAll('.nav-links a');
+    let sectionOffsets = [];
+    let rafPending = false;
+    let lastActive = '';
+
+    function cacheSectionOffsets() {
+      sectionOffsets = sections.map(s => ({ id: s.id, top: s.offsetTop }));
+    }
+
+    function updateNav() {
+      const scrollY = window.scrollY;
+      let current = '';
+      for (const { id, top } of sectionOffsets) {
+        if (scrollY >= top - 100) current = id;
+      }
+      if (current === lastActive) return;
+      lastActive = current;
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+      });
+    }
+
+    cacheSectionOffsets();
+    window.addEventListener('resize', cacheSectionOffsets);
+    window.addEventListener('scroll', () => {
+      if (rafPending) return;
+      rafPending = true;
+      requestAnimationFrame(() => { updateNav(); rafPending = false; });
+    }, { passive: true });
+
+    // Form submission handler
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = '✓ Message Sent!';
+      btn.classList.add('sent');
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Send Message →';
+        btn.classList.remove('sent');
+        btn.disabled = false;
+        e.target.reset();
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
